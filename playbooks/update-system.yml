@@ -1,6 +1,6 @@
 ---
 
-- name: Atualizando o sistema
+- name: Executando update-system
   hosts: AllServers
   roles:
     - update-system

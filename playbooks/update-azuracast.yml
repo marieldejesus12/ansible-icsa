@@ -1,0 +1,8 @@
+---
+
+- name: Executando update-azuracast
+  hosts: azuracast-server
+  roles:
+    - update-azuracast
+
+...

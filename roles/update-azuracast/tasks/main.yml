@@ -1,0 +1,12 @@
+---
+
+- name: Aterando permissões de /var/azuracast/www/update.sh
+  file:
+    path: /var/azuracast/www/update.sh
+    mode: a+x
+
+- name: Atualizando AzuraCast no servidor
+  command:
+    cmd: /var/azuracast/www/update.sh
+
+...
