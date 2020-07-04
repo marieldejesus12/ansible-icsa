@@ -4,9 +4,23 @@
   file:
     path: /var/azuracast/www/update.sh
     mode: a+x
+    
+- name: Copiando /tmp/update.sh
+  copy:
+    src: update.sh
+    dest: /tmp/update.sh
+    owner: root
+    group: root
+    mode: a+rx
+    force: yes
 
-- name: Atualizando AzuraCast no servidor
+- name: Atualizando AzuraCast
   command:
-    cmd: /var/azuracast/www/update.sh
+    cmd: /tmp/update.sh
+
+- name: Deletando /tmp/update.sh
+  file:
+    path: /tmp/update.sh
+    state: absent
 
 ...

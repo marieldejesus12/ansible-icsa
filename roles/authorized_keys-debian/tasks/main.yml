@@ -1,0 +1,11 @@
+---
+    
+- name: Copiando /home/debian/.ssh/authorized_keys
+  copy:
+    src: authorized_keys
+    dest: /home/debian/.ssh/authorized_keys
+    owner: debian
+    group: debian
+    force: yes
+
+...

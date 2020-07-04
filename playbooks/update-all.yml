@@ -1,0 +1,13 @@
+---
+
+- name: Executando update-system
+  hosts: AllServers
+  roles:
+    - update-system
+
+- name: Executando update-azuracast
+  hosts: azuracast-server
+  roles:
+    - update-azuracast
+    
+...
