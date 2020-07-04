@@ -1,0 +1,8 @@
+---
+
+- name: Atualizando o sistema
+  hosts: AllServers
+  roles:
+    - update-system
+
+...

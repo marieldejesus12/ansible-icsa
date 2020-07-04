@@ -1,0 +1,8 @@
+---
+
+- name: Atualizando pacotes
+  apt:
+    upgrade: dist
+    update_cache: yes
+
+...
