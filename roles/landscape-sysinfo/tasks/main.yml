@@ -1,0 +1,41 @@
+---
+
+- name: Instalando python-utmp
+  apt:
+    name: python-utmp
+    state: present
+    update_cache: yes
+
+- name: Copiando lansdcape-sysinfo
+  copy:
+    src: landscape-sysinfo
+    dest: /usr/bin/landscape-sysinfo
+    owner: root
+    group: root
+    mode: a+rx
+    force: yes
+
+- name: Copiando /etc/update-motd.d/50-landscape-sysinfo
+  copy:
+    src: 50-landscape-sysinfo
+    dest: /etc/update-motd.d/50-landscape-sysinfo
+    owner: root
+    group: root
+    mode: a+rx
+    force: yes
+
+- name: Copiando /etc/update-motd.d/10-uname
+  copy:
+    src: 10-uname
+    dest: /etc/update-motd.d/10-uname
+    owner: root
+    group: root
+    mode: a+rx
+    force: yes
+
+- name: Deletando /etc/motd
+  file:
+    path: /etc/motd
+    state: absent
+
+...

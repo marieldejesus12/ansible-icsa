@@ -1,0 +1,8 @@
+---
+
+- name: Instalando landscape-sysinfo
+  hosts: DebianServers
+  roles:
+    - landscape-sysinfo
+
+...
