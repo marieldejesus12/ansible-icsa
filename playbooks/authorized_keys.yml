@@ -1,0 +1,8 @@
+---
+
+- name: Executando authorized_keys
+  hosts: AllServers
+  roles:
+    - authorized_keys
+
+...

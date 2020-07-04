@@ -1,8 +1,0 @@
----
-
-- name: Executando authorized_keys-debian
-  hosts: DebianServers
-  roles:
-    - authorized_keys-debian
-
-...

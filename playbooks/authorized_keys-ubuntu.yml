@@ -1,8 +1,0 @@
----
-
-- name: Executando authorized_keys-ubuntu
-  hosts: UbuntuServers
-  roles:
-    - authorized_keys-ubuntu
-
-...

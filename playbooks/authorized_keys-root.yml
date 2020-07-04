@@ -1,8 +1,0 @@
----
-
-- name: Executando authorized_keys-root
-  hosts: AllServers
-  roles:
-    - authorized_keys-root
-
-...

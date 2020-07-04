@@ -2,7 +2,7 @@
     
 - name: Copiando /root/.ssh/authorized_keys
   copy:
-    src: authorized_keys
+    src: authorized_keys-root
     dest: /root/.ssh/authorized_keys
     owner: root
     group: root
