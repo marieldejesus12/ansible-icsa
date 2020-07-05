@@ -73,6 +73,7 @@ plugins=(
 	systemd
 	web-search
 	debian
+	archlinux
 	history-substring-search
 	ufw
 )

@@ -1,8 +1,15 @@
 ---
 
-- name: Atualizando pacotes
+- name: Atualizando pacotes via apt
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
   apt:
     upgrade: dist
+    update_cache: yes
+
+- name: Atualizando pacotes via pacman
+  when: ansible_distribution == 'Archlinux'
+  pacman:
+    upgrade: yes
     update_cache: yes
 
 ...

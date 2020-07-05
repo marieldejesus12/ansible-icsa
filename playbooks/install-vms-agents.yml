@@ -1,0 +1,8 @@
+---
+
+- name: Executando install-qemu-guest-agent
+  hosts: AllServers
+  roles:
+    - install-qemu-guest-agent
+
+...

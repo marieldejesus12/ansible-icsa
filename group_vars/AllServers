@@ -1,3 +1,4 @@
+ansible_executable: /bin/bash
 ansible_ask_pass: False
 ansible_become: yes
 ansible_become_method: sudo
