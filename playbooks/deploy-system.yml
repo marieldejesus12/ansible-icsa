@@ -7,5 +7,6 @@
     - authorized_keys
     - landscap-sysinfo
     - install-zsh
+    - install-vms-agents
 
 ...
