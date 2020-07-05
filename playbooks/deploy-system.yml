@@ -1,0 +1,10 @@
+---
+
+- name: Executando deploy-system
+  hosts: host
+  roles:
+    - update-system
+    - authorized_keys
+    - landscap-sysinfo
+
+...
