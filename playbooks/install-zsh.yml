@@ -1,0 +1,8 @@
+---
+
+- name: Executando install-zsh
+  hosts: AllServers
+  roles:
+    - install-zsh
+
+...

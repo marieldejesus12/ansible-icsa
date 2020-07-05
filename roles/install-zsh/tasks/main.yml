@@ -1,0 +1,17 @@
+---
+
+- name: Instalando zsh
+  apt:
+    name: zsh
+    state: present
+    update_cache: yes
+
+- name: Copiando ~/.zshrc
+  copy:
+    src: zshrc
+    dest: "/home/{{ ansible_distribution | lower }}/.zshrc"
+    owner: "{{ ansible_distribution | lower }}"
+    group: "{{ ansible_distribution | lower }}"
+    force: yes
+
+...
