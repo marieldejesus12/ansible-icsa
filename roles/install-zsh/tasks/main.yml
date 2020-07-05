@@ -6,6 +6,19 @@
     state: present
     update_cache: yes
 
+- name: Copiando /tmp/ohmyzsh.sh
+  template:
+    src: ohmyzsh.sh
+    dest: /tmp/ohmyzsh.sh
+    owner: root
+    group: root
+    mode: a+rx
+    force: yes
+
+- name: Instalando oh-my-zsh
+  command:
+    cmd: /tmp/ohmyzsh.sh
+
 - name: Copiando ~/.zshrc
   copy:
     src: zshrc
@@ -14,4 +27,8 @@
     group: "{{ ansible_distribution | lower }}"
     force: yes
 
+- name: Deletando /tmp/ohmyzsh.sh
+  file:
+    path: /tmp/ohmyzsh.sh
+    state: absent
 ...
