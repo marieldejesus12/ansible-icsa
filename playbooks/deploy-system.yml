@@ -6,5 +6,6 @@
     - update-system
     - authorized_keys
     - landscap-sysinfo
+    - install-zsh
 
 ...
