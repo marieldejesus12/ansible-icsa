@@ -14,6 +14,20 @@
     state: present
     update_cache: yes
 
+- name: Instalando git via apt
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  apt:
+    name: git
+    state: present
+    update_cache: yes
+
+- name: Instalando git via pacman
+  when: ansible_distribution == 'Archlinux'
+  pacman:
+    name: git
+    state: present
+    update_cache: yes
+
 - name: Copiando /tmp/ohmyzsh.sh
   template:
     src: ohmyzsh.sh

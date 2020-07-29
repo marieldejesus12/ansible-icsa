@@ -1,11 +1,11 @@
 ---
 
 - name: Executando deploy-system
-  hosts: host
+  hosts: kvm2-server
   roles:
     - update-system
     - authorized_keys
-    - landscap-sysinfo
+    - landscape-sysinfo
     - install-zsh
     - install-vms-agents
 

@@ -6,6 +6,7 @@
     name: qemu-guest-agent
     state: present
     update_cache: yes
+  notify: Reiniciando qemu-guest-agent.service
 
 - name: Instalando qemu-guest-agent via pacman
   when: ansible_distribution == 'Archlinux'
@@ -13,6 +14,7 @@
     name: qemu-guest-agent
     state: present
     update_cache: yes
+  notify: Reiniciando qemu-ga.service
 
 - name: Instalando open-vm-tools via apt
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
@@ -20,6 +22,7 @@
     name: open-vm-tools
     state: present
     update_cache: yes
+  notify: Reiniciando open-vm-tools.service
 
 - name: Instalando open-vm-tools via pacman
   when: ansible_distribution == 'Archlinux'
@@ -27,33 +30,6 @@
     name: open-vm-tools
     state: present
     update_cache: yes
-
-- name: Iniciando qemu-guest-agent.service
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-  systemd:
-    name: qemu-guest-agent
-    state: started
-    enabled: yes
-
-- name: Iniciando qemu-ga.service
-  when: ansible_distribution == 'Archlinux'
-  systemd:
-    name: qemu-ga
-    state: started
-    enabled: yes
-
-- name: Iniciando open-vm-tools.service
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-  systemd:
-    name: open-vm-tools
-    state: started
-    enabled: yes
-
-- name: Iniciando vmtoolsd.service
-  when: ansible_distribution == 'Archlinux'
-  systemd:
-    name: vmtoolsd
-    state: started
-    enabled: yes
+  notify: Reiniciando vmtoolsd.service
 
 ...
