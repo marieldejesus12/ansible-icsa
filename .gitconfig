@@ -1,0 +1,10 @@
+[user]
+	name = Mariel de Jesus™
+	email = marieldejesus12@gmail.com
+	signingKey = CF99EFA6B2F744E89AB5D8D4401BD79561981BE2
+[commit]
+	gpgSign = true
+[credential "https://github.com"]
+	username = marieldejesus12
+[core]
+	editor = nano

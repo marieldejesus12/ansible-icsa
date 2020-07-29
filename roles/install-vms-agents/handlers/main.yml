@@ -1,0 +1,27 @@
+---
+
+- name: Reiniciando qemu-guest-agent.service
+  systemd:
+    name: qemu-guest-agent
+    state: restarted
+    enabled: yes
+
+- name: Reiniciando qemu-ga.service
+  systemd:
+    name: qemu-ga
+    state: restarted
+    enabled: yes
+
+- name: Reiniciando open-vm-tools.service
+  systemd:
+    name: open-vm-tools
+    state: restarted
+    enabled: yes
+
+- name: Reiniciando vmtoolsd.service
+  systemd:
+    name: vmtoolsd
+    state: restarted
+    enabled: yes
+
+...
