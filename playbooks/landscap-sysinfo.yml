@@ -1,7 +1,9 @@
 ---
 
 - name: Executando landscape-sysinfo
-  hosts: DebianServers
+  hosts:
+    - DebianServers
+    - MainServers
   roles:
     - landscape-sysinfo
 

@@ -1,0 +1,9 @@
+---
+
+- name: Reiniciando o sistema
+  command: /usr/bin/systemctl reboot
+
+- name: Desligando o sistema
+  command: /usr/bin/systemctl poweroff
+
+...
