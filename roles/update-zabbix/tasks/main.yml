@@ -1,0 +1,37 @@
+---
+
+- name: Copiando /tmp/zabbix-debian.deb
+  when: ansible_distribution == 'Debian'
+  copy:
+    src: zabbix-debian.deb
+    dest: /tmp/zabbix-debian.deb
+    owner: root
+    group: root
+    mode: a+rx
+    force: yes
+
+- name: Copiando /tmp/zabbix-ubuntu.deb
+  when: ansible_distribution == 'Ubuntu'
+  copy:
+    src: zabbix-ubuntu.deb
+    dest: /tmp/zabbix-ubuntu.deb
+    owner: root
+    group: root
+    mode: a+rx
+    force: yes
+
+
+
+- name: Deletando /tmp/zabbix-debian.deb
+  when: ansible_distribution == 'Debian'
+  file:
+    path: /tmp/zabbix-debian.deb
+    state: absent
+
+- name: Deletando /tmp/zabbix-ubuntu.deb
+  when: ansible_distribution == 'Ubuntu'
+  file:
+    path: /tmp/zabbix-ubuntu.deb
+    state: absent
+
+...

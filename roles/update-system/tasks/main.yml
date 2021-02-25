@@ -36,4 +36,12 @@
     update_cache: yes
   notify: Desligando o sistema
 
+- name: Atualizando pacotes via apt
+  when:
+    - ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+    - group_names | select('search','Main') | list | count > 0
+  apt:
+    upgrade: dist
+    update_cache: yes
+  notify: Reiniciando o sistema
 ...
